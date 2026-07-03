@@ -1,0 +1,33 @@
+{
+  "id": "/",
+  "short_name": "Study Time",
+  "name": "Study Time Manager",
+  "description": "Plan and track study sessions with a focused dashboard for goals, planning, timer, and stats.",
+  "icons": [
+    {
+      "src": "icons/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/dashboard",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "browser"],
+  "orientation": "portrait-primary",
+  "theme_color": "#fcf7ef",
+  "background_color": "#fcf7ef"
+}

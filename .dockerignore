@@ -1,0 +1,80 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Build outputs
+dist
+.output
+.vinxi
+.cache
+.tanstack
+.nitro
+
+# Build caches (must be excluded to prevent stale references)
+node_modules/.vite
+node_modules/.nitro
+node_modules/.rolldown
+
+# Testing
+coverage
+.nyc_output
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Docker
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Documentation
+README.md
+LICENSE
+CHANGELOG.md
+Documentation.md
+*.md
+
+# CI/CD
+.github
+.gitlab-ci.yml
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor config
+.editorconfig
+.prettierrc
+.prettierignore
+biome.json
+
+# TypeScript
+*.tsbuildinfo
+
+# Misc
+.eslintcache
+Makefile
+helm-charts

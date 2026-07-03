@@ -1,0 +1,34 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1778526611119,
+      "tag": "0000_worried_tony_stark",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1778671922360,
+      "tag": "0001_fair_captain_britain",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1779026489552,
+      "tag": "0002_dark_kinsey_walden",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1780089721982,
+      "tag": "0003_harsh_maggott",
+      "breakpoints": true
+    }
+  ]
+}

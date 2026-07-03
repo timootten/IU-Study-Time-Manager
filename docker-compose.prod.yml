@@ -1,0 +1,33 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - VITE_APP_URL=${VITE_APP_URL}
+        - VITE_VAPID_PUBLIC_KEY=${VITE_VAPID_PUBLIC_KEY}
+    container_name: iu-study-time-manager-app
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+    env_file:
+      - .env
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--tries=1",
+          "--spider",
+          "http://localhost:3000/",
+        ]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=dokploy-network
+      - traefik.http.middlewares.stm-compress.compress=true
+      - traefik.http.routers.stm-app-fcree5-15-web.middlewares=stm-compress
+      - traefik.http.routers.stm-app-fcree5-16-web.middlewares=stm-compress

@@ -1,0 +1,103 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Study Time Manager logo">
+  <defs>
+    <linearGradient id="bg" x1="76" y1="48" x2="438" y2="460" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6ec5bf"/>
+      <stop offset="0.52" stop-color="#0f8a8d"/>
+      <stop offset="1" stop-color="#136f8d"/>
+    </linearGradient>
+    <linearGradient id="card" x1="128" y1="92" x2="384" y2="396" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.97"/>
+      <stop offset="1" stop-color="#f0fafa" stop-opacity="0.88"/>
+    </linearGradient>
+    <linearGradient id="bookFill" x1="158" y1="196" x2="354" y2="342" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e8f6f5"/>
+    </linearGradient>
+    <linearGradient id="ink" x1="166" y1="194" x2="350" y2="350" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1d3340"/>
+      <stop offset="1" stop-color="#136f8d"/>
+    </linearGradient>
+    <linearGradient id="stmGrad" x1="170" y1="370" x2="342" y2="408" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0f8a8d"/>
+      <stop offset="0.5" stop-color="#0d6e8a"/>
+      <stop offset="1" stop-color="#1d3340"/>
+    </linearGradient>
+    <radialGradient id="clockFace" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(256 174) rotate(90) scale(48)">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#eaf7f6"/>
+    </radialGradient>
+    <filter id="shadow" x="60" y="60" width="392" height="420" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#0d3a4e" flood-opacity="0.20"/>
+    </filter>
+    <filter id="textGlow" x="-20%" y="-60%" width="140%" height="220%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#0f8a8d" flood-opacity="0.25" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="512" height="512" rx="112" fill="url(#bg)"/>
+  <circle cx="396" cy="110" r="56" fill="#fcf8ef" fill-opacity="0.10"/>
+  <circle cx="126" cy="402" r="70" fill="#fcf8ef" fill-opacity="0.07"/>
+
+  <g filter="url(#shadow)">
+    <rect x="96" y="88" width="320" height="336" rx="72" fill="url(#card)"/>
+    <rect x="97" y="89" width="318" height="334" rx="71" stroke="#ffffff" stroke-opacity="0.40" stroke-width="1.5"/>
+  </g>
+
+  <!-- Left page: y shifted up 25px (203 from 228, 182 from 207, 315 from 340, 296 from 321, 312 from 337) -->
+  <path d="M159 203C159 191.402 168.402 182 180 182H241C252.598 182 256 191.402 256 203V315C241.169 302.249 223.542 296 205 296C186.825 296 170.714 302.141 159 312.822V203Z" fill="url(#bookFill)"/>
+
+  <!-- Right page: y shifted up 25px -->
+  <path d="M353 203C353 191.402 343.598 182 332 182H271C259.402 182 256 191.402 256 203V315C270.831 302.249 288.458 296 307 296C325.175 296 341.286 302.141 353 312.822V203Z" fill="url(#bookFill)"/>
+
+  <!-- Spine: y shifted up 25px (186 from 211, height 131 same) -->
+  <rect x="250" y="186" width="12" height="131" rx="6" fill="#f4fbfa"/>
+  <path d="M256 189V314" stroke="#b8e8e6" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Book outlines -->
+  <path d="M159 203C159 191.402 168.402 182 180 182H241C252.598 182 256 191.402 256 203V315C241.169 302.249 223.542 296 205 296C186.825 296 170.714 302.141 159 312.822V203Z" stroke="url(#ink)" stroke-width="9" stroke-linejoin="round" fill="none"/>
+  <path d="M353 203C353 191.402 343.598 182 332 182H271C259.402 182 256 191.402 256 203V315C270.831 302.249 288.458 296 307 296C325.175 296 341.286 302.141 353 312.822V203Z" stroke="url(#ink)" stroke-width="9" stroke-linejoin="round" fill="none"/>
+
+  <!-- Inner binding curves: shifted up 25px (186 from 211, 201 from 226) -->
+  <path d="M243 186C248 189 253 194 255 201" stroke="#d8f0ef" stroke-width="4" stroke-linecap="round"/>
+  <path d="M269 186C264 189 259 194 257 201" stroke="#d8f0ef" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Left page lines: shifted up 25px -->
+  <path d="M189 223H229" stroke="#9ed8d6" stroke-width="7" stroke-linecap="round"/>
+  <path d="M189 245H221" stroke="#9ed8d6" stroke-width="7" stroke-linecap="round"/>
+  <path d="M189 267H228" stroke="#c8eded" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Right page lines: shifted up 25px -->
+  <path d="M283 223H323" stroke="#9ed8d6" stroke-width="7" stroke-linecap="round"/>
+  <path d="M291 245H323" stroke="#9ed8d6" stroke-width="7" stroke-linecap="round"/>
+  <path d="M283 267H319" stroke="#c8eded" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Clock: original position -->
+  <circle cx="256" cy="174" r="56" fill="#e0f5f4" fill-opacity="0.50"/>
+  <circle cx="256" cy="174" r="48" fill="url(#clockFace)" stroke="url(#ink)" stroke-width="10"/>
+  <circle cx="256" cy="174" r="40" fill="none" stroke="#d0eeed" stroke-width="1.5"/>
+
+  <line x1="256" y1="140" x2="256" y2="146" stroke="#1d3340" stroke-width="3" stroke-linecap="round"/>
+  <line x1="286" y1="146" x2="283" y2="151" stroke="#1d3340" stroke-width="3" stroke-linecap="round"/>
+  <line x1="296" y1="174" x2="290" y2="174" stroke="#1d3340" stroke-width="3" stroke-linecap="round"/>
+  <line x1="286" y1="202" x2="283" y2="197" stroke="#1d3340" stroke-width="3" stroke-linecap="round"/>
+  <line x1="256" y1="208" x2="256" y2="202" stroke="#1d3340" stroke-width="3" stroke-linecap="round"/>
+  <line x1="226" y1="202" x2="229" y2="197" stroke="#1d3340" stroke-width="3" stroke-linecap="round"/>
+  <line x1="216" y1="174" x2="222" y2="174" stroke="#1d3340" stroke-width="3" stroke-linecap="round"/>
+  <line x1="226" y1="146" x2="229" y2="151" stroke="#1d3340" stroke-width="3" stroke-linecap="round"/>
+
+  <path d="M256 174L241 156" stroke="url(#ink)" stroke-width="10" stroke-linecap="round"/>
+  <path d="M256 174L273 184" stroke="url(#ink)" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="256" cy="174" r="7" fill="#0f8a8d"/>
+  <circle cx="256" cy="174" r="3.5" fill="#ffffff"/>
+
+  <!-- STM badge: moved up 20px, font size 42 -->
+  <rect x="168" y="346" width="176" height="54" rx="27" fill="url(#stmGrad)" opacity="0.12"/>
+  <rect x="169" y="347" width="174" height="52" rx="26" stroke="url(#stmGrad)" stroke-opacity="0.30" stroke-width="1.5" fill="none"/>
+  <text x="256" y="387" text-anchor="middle" font-family="Manrope, 'Arial Black', Arial, sans-serif" font-size="42" font-weight="800" letter-spacing="8" fill="url(#stmGrad)" filter="url(#textGlow)">STM</text>
+</svg>

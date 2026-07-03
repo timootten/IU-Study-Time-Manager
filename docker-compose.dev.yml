@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:18-alpine
+    container_name: iu-study-time-manager-dev-db
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: stm
+      POSTGRES_USER: stm
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - pg_dev_data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U stm -d stm"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  pg_dev_data:
