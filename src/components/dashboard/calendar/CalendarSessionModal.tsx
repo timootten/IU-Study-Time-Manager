@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
 import type { CalendarSession } from "#/components/dashboard/calendar/calendar-utils";
 import { getGoalIcon } from "#/components/dashboard/calendar/calendar-utils";
+import { datetimeLocalToIso } from "#/components/dashboard/timer/timer-utils";
 import DashboardModal from "#/components/dashboard/ui/DashboardModal";
 import FieldError from "#/components/dashboard/ui/FieldError";
 import { randomBrightColor } from "#/components/dashboard/utils/color-utils";
@@ -161,8 +162,8 @@ export default function CalendarSessionModal({
 		setShowValidation(true);
 		if (hasErrors) return;
 
-		const startTime = new Date(fromValue).toISOString();
-		const endTime = new Date(untilValue).toISOString();
+		const startTime = datetimeLocalToIso(fromValue);
+		const endTime = datetimeLocalToIso(untilValue);
 		const nameValue = sessionName.trim();
 		const durationMinutes = Math.round(
 			(new Date(untilValue).getTime() - new Date(fromValue).getTime()) / 60000,

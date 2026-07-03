@@ -8,6 +8,7 @@ import DashboardRoutePending from "#/components/dashboard/DashboardRoutePending"
 import DashboardShell from "#/components/dashboard/DashboardShell";
 import SimpleTimerControls from "#/components/dashboard/timer/SimpleTimerControls";
 import {
+	datetimeLocalToIso,
 	keepOnlyDigits,
 	toDateTimeInputValue,
 } from "#/components/dashboard/timer/timer-utils";
@@ -205,7 +206,7 @@ function TimerPage() {
 		if (!manualGoalId || !manualStartedAt || !manualDurationMinutes) return;
 		addManualTimeMutation.mutate({
 			goalId: manualGoalId,
-			startedAt: manualStartedAt,
+			startedAt: datetimeLocalToIso(manualStartedAt),
 			durationMinutes: Number(manualDurationMinutes),
 			notes: manualNotes.trim() || undefined,
 		});
@@ -316,7 +317,7 @@ function TimerPage() {
 								{
 									sessionId: timeEntryEditing.id,
 									goalId: timeEntryEditing.goalId,
-									startedAt: timeEntryEditing.startedAt,
+									startedAt: datetimeLocalToIso(timeEntryEditing.startedAt),
 									durationMinutes: Number(timeEntryEditing.durationMinutes),
 									notes: timeEntryEditing.notes.trim() || undefined,
 								},

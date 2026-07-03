@@ -3,6 +3,7 @@ import { type FormEvent, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
 import { toDatetimeLocal } from "#/components/dashboard/goals/format-utils";
+import { datetimeLocalToIso } from "#/components/dashboard/timer/timer-utils";
 import DashboardModal from "#/components/dashboard/ui/DashboardModal";
 import FieldError from "#/components/dashboard/ui/FieldError";
 import { getUserMessage } from "#/lib/errors/extract-error";
@@ -140,8 +141,8 @@ export default function SessionModal({
 		setShowValidation(true);
 		if (hasErrors) return;
 
-		const startTime = new Date(fromValue).toISOString();
-		const endTime = new Date(untilValue).toISOString();
+		const startTime = datetimeLocalToIso(fromValue);
+		const endTime = datetimeLocalToIso(untilValue);
 
 		if (isEditing && isCompleted) {
 			updateCompletedMutation.mutate({

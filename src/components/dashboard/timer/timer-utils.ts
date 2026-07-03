@@ -48,6 +48,25 @@ export function minutesFromSeconds(seconds: number) {
 	return Math.max(1, Math.round(seconds / 60));
 }
 
+/**
+ * Convert a datetime-local input value (e.g., "2026-07-03T20:56")
+ * to a proper ISO string with timezone information.
+ * This ensures the local time is preserved when sent to the server.
+ */
+export function datetimeLocalToIso(datetimeLocal: string): string {
+	// datetime-local format: "YYYY-MM-DDTHH:mm"
+	// We need to parse it as a local date, not UTC
+	const [datePart, timePart] = datetimeLocal.split("T");
+	const [year, month, day] = datePart.split("-").map(Number);
+	const [hours, minutes] = timePart.split(":").map(Number);
+
+	// Create a Date object in local timezone
+	const date = new Date(year, month - 1, day, hours, minutes, 0, 0);
+
+	// Convert to ISO string (this will include timezone offset)
+	return date.toISOString();
+}
+
 export function focusModalAutofocus() {
 	if (typeof document === "undefined") return;
 	const target = document.querySelector<HTMLElement>("[data-autofocus]");
