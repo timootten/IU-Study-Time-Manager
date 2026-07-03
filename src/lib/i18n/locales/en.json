@@ -530,6 +530,7 @@
 		"allStatuses": "All statuses",
 		"milestonesTitle": "Milestones",
 		"sessionsTitle": "Sessions",
+		"planned": "Planned",
 		"months": "Months",
 		"weeks": "Weeks",
 		"days": "Days",
@@ -540,6 +541,7 @@
 		"noMilestonesYet": "No milestones yet",
 		"noSessionsYet": "No sessions yet",
 		"logged": "logged",
+		"notCounted": "Not counted",
 		"remaining_one": "{{count}}d remaining",
 		"remaining_other": "{{count}}d remaining",
 		"form": {

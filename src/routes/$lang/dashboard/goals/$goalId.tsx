@@ -180,7 +180,10 @@ function GoalDetailPage() {
 		[snapshot.roughPlans, goalId],
 	);
 	const sessions = useMemo(
-		() => snapshot.detailedPlans.filter((s) => s.goalId === goalId),
+		() =>
+			snapshot.detailedPlans.filter(
+				(s) => s.goalId === goalId && s.status !== "completed",
+			),
 		[snapshot.detailedPlans, goalId],
 	);
 	const recentSessions = useMemo(

@@ -541,6 +541,7 @@
 		"noMilestonesYet": "Noch keine Meilensteine",
 		"noSessionsYet": "Noch keine Sitzungen",
 		"logged": "protokolliert",
+		"notCounted": "Nicht gezählt",
 		"remaining_one": "{{count}}d verbleibend",
 		"remaining_other": "{{count}}d verbleibend",
 		"form": {
