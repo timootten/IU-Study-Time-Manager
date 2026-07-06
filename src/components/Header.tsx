@@ -1,3 +1,4 @@
+import { useQueryClient } from "@tanstack/react-query";
 import { Link, useLocation, useNavigate } from "@tanstack/react-router";
 import { LogOut, Menu, Settings, Shield, UserRound, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
@@ -50,6 +51,7 @@ function readOfflineSession(): HeaderSession {
 
 export default function Header({ initialSession }: HeaderProps) {
 	const { t } = useTranslation();
+	const queryClient = useQueryClient();
 	const lang = useLangParam();
 	const navigate = useNavigate();
 	const location = useLocation();
@@ -139,6 +141,7 @@ export default function Header({ initialSession }: HeaderProps) {
 				return;
 			}
 
+			queryClient.clear();
 			setAccountMenuOpen(false);
 			setMobileMenuOpen(false);
 			if (typeof window !== "undefined") {

@@ -465,6 +465,8 @@
 		"achievement": "Achievement",
 		"lecture": "Lecture",
 		"learning": "Learning",
+		"course": "Course",
+		"other": "Other",
 		"inLast5Months": "in last 5 months",
 		"attentionItem_one": "attention item",
 		"attentionItem_other": "attention items",

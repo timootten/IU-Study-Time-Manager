@@ -63,9 +63,32 @@ function mapCategoryLabel(category: string) {
 function DashboardPage() {
 	const { session } = Route.useLoaderData();
 	const { t } = useTranslation();
-	const { data: snapshot, error } = useQuery(studyDashboardQueryOptions());
+	const {
+		data: snapshot,
+		error,
+		isPending,
+	} = useQuery(studyDashboardQueryOptions());
+
+	const achievementsByCategory = useMemo(
+		() =>
+			snapshot
+				? Object.entries(
+						snapshot.achievements.reduce(
+							(acc, a) => {
+								acc[a.category] = (acc[a.category] ?? 0) + 1;
+								return acc;
+							},
+							{} as Record<string, number>,
+						),
+					).sort((a, b) => b[1] - a[1])
+				: [],
+		[snapshot],
+	);
 
 	if (!snapshot) {
+		if (isPending) {
+			return <DashboardRoutePending />;
+		}
 		throw error ?? new Error("Missing study dashboard data.");
 	}
 
@@ -79,20 +102,6 @@ function DashboardPage() {
 		plannedHours: entry.plannedHours,
 		actualHours: entry.actualHours,
 	}));
-
-	const achievementsByCategory = useMemo(
-		() =>
-			Object.entries(
-				snapshot.achievements.reduce(
-					(acc, a) => {
-						acc[a.category] = (acc[a.category] ?? 0) + 1;
-						return acc;
-					},
-					{} as Record<string, number>,
-				),
-			).sort((a, b) => b[1] - a[1]),
-		[snapshot.achievements],
-	);
 
 	return (
 		<DashboardShell
