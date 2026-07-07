@@ -28,8 +28,10 @@ export const Route = createFileRoute("/$lang/dashboard/")({
 		const session = await requireAuthSession({
 			lang: params.lang as SupportedLanguage,
 		});
-		await context.queryClient.fetchQuery(studyDashboardQueryOptions());
-		return { session, lang: params.lang as SupportedLanguage };
+		const snapshot = await context.queryClient.fetchQuery(
+			studyDashboardQueryOptions(),
+		);
+		return { session, snapshot, lang: params.lang as SupportedLanguage };
 	},
 	head: ({ params }) =>
 		seoHead(
@@ -61,36 +63,25 @@ function mapCategoryLabel(category: string) {
 }
 
 function DashboardPage() {
-	const { session } = Route.useLoaderData();
+	const { session, snapshot: loaderSnapshot } = Route.useLoaderData();
 	const { t } = useTranslation();
-	const {
-		data: snapshot,
-		error,
-		isPending,
-	} = useQuery(studyDashboardQueryOptions());
+	const { data: snapshot = loaderSnapshot } = useQuery(
+		studyDashboardQueryOptions(),
+	);
 
 	const achievementsByCategory = useMemo(
 		() =>
-			snapshot
-				? Object.entries(
-						snapshot.achievements.reduce(
-							(acc, a) => {
-								acc[a.category] = (acc[a.category] ?? 0) + 1;
-								return acc;
-							},
-							{} as Record<string, number>,
-						),
-					).sort((a, b) => b[1] - a[1])
-				: [],
-		[snapshot],
+			Object.entries(
+				snapshot.achievements.reduce(
+					(acc, a) => {
+						acc[a.category] = (acc[a.category] ?? 0) + 1;
+						return acc;
+					},
+					{} as Record<string, number>,
+				),
+			).sort((a, b) => b[1] - a[1]),
+		[snapshot.achievements],
 	);
-
-	if (!snapshot) {
-		if (isPending) {
-			return <DashboardRoutePending />;
-		}
-		throw error ?? new Error("Missing study dashboard data.");
-	}
 
 	const firstName = session.user.name?.split(" ")[0] ?? "there";
 	const attentionCount =
