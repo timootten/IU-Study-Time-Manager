@@ -1,10 +1,12 @@
 # IU Study Time Manager
 
-A comprehensive study time management application for students.
+> A comprehensive study time management application for students.
+
+Visit the application at: [https://stm.shadehost.eu](https://stm.shadehost.eu)
 
 ## About
 
-IU Study Time Manager helps students track their study sessions, set goals, manage calendar events, and monitor their academic progress.
+IU Study Time Manager helps students track their study sessions, set goals, manage calendar events, and monitor their academic progress. Available in both German and English at [https://stm.shadehost.eu/de](https://stm.shadehost.eu/de) and [https://stm.shadehost.eu/en](https://stm.shadehost.eu/en).
 
 ## Features
 
@@ -17,9 +19,17 @@ IU Study Time Manager helps students track their study sessions, set goals, mana
 - Dark/Light theme
 - Progressive Web App (PWA) capabilities
 
+For more details, see the [English documentation](https://stm.shadehost.eu/en/legal/privacy) and [German documentation](https://stm.shadehost.eu/de/legal/privacy).
+
 ## Stack
 
-- Built with TypeScript, React, and TanStack Router
-- Backend powered by Bun and Nitro
-- Database with Drizzle ORM
-- Styled with Tailwind CSS
+- Built with [TypeScript](https://www.typescriptlang.org/), [React](https://react.dev/), and [TanStack Router](https://tanstack.com/router)
+- Backend powered by [Bun](https://bun.sh) and [Nitro](https://nitro.unjs.io/)
+- Database with [Drizzle ORM](https://orm.drizzle.team/)
+- Styled with [Tailwind CSS](https://tailwindcss.com/)
+
+## Links
+
+- Homepage: [https://stm.shadehost.eu](https://stm.shadehost.eu)
+- German Version: [https://stm.shadehost.eu/de](https://stm.shadehost.eu/de)
+- English Version: [https://stm.shadehost.eu/en](https://stm.shadehost.eu/en)
