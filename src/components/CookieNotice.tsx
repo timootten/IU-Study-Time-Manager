@@ -47,7 +47,7 @@ export default function CookieNotice() {
 			<button
 				type="button"
 				onClick={dismiss}
-				className="mt-4 w-full rounded-lg bg-(--brand) px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-(--brand-strong)"
+				className="mt-4 w-full rounded-lg bg-(--brand) px-4 py-2.5 text-sm font-medium text-white dark:text-gray-900 transition-colors hover:bg-(--brand-strong)"
 			>
 				{t("cookieNotice.accept")}
 			</button>

@@ -1,0 +1,25 @@
+# IU Study Time Manager
+
+A comprehensive study time management application for students.
+
+## About
+
+IU Study Time Manager helps students track their study sessions, set goals, manage calendar events, and monitor their academic progress.
+
+## Features
+
+- Study time tracking and timer
+- Goal setting and progress monitoring
+- Calendar integration with ICS import
+- Achievement system
+- Statistics and analytics
+- Multi-language support (German/English)
+- Dark/Light theme
+- Progressive Web App (PWA) capabilities
+
+## Stack
+
+- Built with TypeScript, React, and TanStack Router
+- Backend powered by Bun and Nitro
+- Database with Drizzle ORM
+- Styled with Tailwind CSS
